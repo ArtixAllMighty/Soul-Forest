@@ -269,6 +269,13 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 		    else
 		    {
 			p_147418_3_[l1] = Blocks.bedrock;
+			
+			if(k1 < 127 && k1 > 123){
+				int chunkSize2 = (chunkZ * 16 + chunkX) * 128 + (worldHeight-1);
+				p_147418_3_[chunkSize2] = biomeGenBase.fillerBlock; //fix for topblock under bedrock
+				//this gives you one layer of bedrock at 127, and all blocks underneath will be fillerblocks
+				//hope you appreciate my fix for you :) ~Subaraki
+			}
 		    }
 		}
 	    }
